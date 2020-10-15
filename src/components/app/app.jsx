@@ -1,11 +1,11 @@
-import React from "react";
+import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import {Switch, Route, BrowserRouter, Link} from "react-router-dom";
 
-import Main from "../main/main";
-import Favorites from "../favorites/favorites";
-import Login from "../login/login";
-import Property from "../property/property";
+import MainPage from "../pages/main/main-page";
+import FavoritesPage from "../pages/favorites/favorites-page";
+import SignInPage from "../pages/sign-in/sign-in-page";
+import RoomPage from "../pages/room/room-page";
 
 const App = (props) => {
   const {placesCount} = props;
@@ -14,17 +14,23 @@ const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Main placesCount={placesCount} />
+          <MainPage placesCount={placesCount} />
         </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/favorites">
-          <Favorites />
-        </Route>
-        <Route exact path="/offer/:id">
-          <Property />
-        </Route>
+        <Route exact path="/login" component = {SignInPage}/>
+        <Route exact path="/favorites" component = {FavoritesPage}/>
+        <Route exact path="/offer/:id" component = {RoomPage}/>
+        <Route
+          render={() => (
+            <Fragment>
+              <h1>
+                404.
+                <br />
+                <small>Page not found</small>
+              </h1>
+              <Link to="/">Go to main page</Link>
+            </Fragment>
+          )}
+        />
       </Switch>
     </BrowserRouter>
   );
