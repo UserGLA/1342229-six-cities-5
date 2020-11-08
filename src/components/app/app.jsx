@@ -9,7 +9,6 @@ import RoomPage from "../pages/room/room-page";
 
 const App = (props) => {
   const {placesCount} = props;
-
   return (
     <BrowserRouter>
       <Switch>
