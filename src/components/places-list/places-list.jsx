@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import OffersList from "./offers-list";
 
 class PlacesList extends PureComponent {
 
@@ -28,8 +29,7 @@ class PlacesList extends PureComponent {
             <li className="places__option" tabIndex="0">Top rated first</li>
           </ul>
         </form>
-        <div className="cities__places-list places__list tabs__content">
-        </div>
+        <OffersList />
       </section>
     );
   }
@@ -37,20 +37,22 @@ class PlacesList extends PureComponent {
 
 PlacesList.propTypes = {
   placesCount: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired,
-  mark: PropTypes.bool,
-  photos: PropTypes.string.isRequired,
-  name: PropTypes. string.isRequired,
-  raiting: PropTypes.number,
-  featureEntire: PropTypes.string.isRequired,
-  featureBadrooms: PropTypes.number.isRequired,
-  featureAdults: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
-  priceText: PropTypes.string.isRequired,
-  propertyInside: PropTypes.array.isRequired,
-  hostUserImg: PropTypes.string,
-  hostUserName: PropTypes.string.isRequired,
-  propertyDescription: PropTypes.string
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    mark: PropTypes.bool,
+    photos: PropTypes.string.isRequired,
+    name: PropTypes. string.isRequired,
+    raiting: PropTypes.number,
+    featureEntire: PropTypes.string.isRequired,
+    featureBadrooms: PropTypes.number.isRequired,
+    featureAdults: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    priceText: PropTypes.string.isRequired,
+    propertyInside: PropTypes.array.isRequired,
+    hostUserImg: PropTypes.string,
+    hostUserName: PropTypes.string.isRequired,
+    propertyDescription: PropTypes.string
+  })).isRequired
 };
 
 export default PlacesList;

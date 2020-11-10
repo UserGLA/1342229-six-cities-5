@@ -9,11 +9,14 @@ import RoomPage from "../pages/room/room-page";
 
 const App = (props) => {
   const {placesCount} = props;
+  const {offers} = props;
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainPage placesCount={placesCount} />
+          <MainPage
+            placesCount={placesCount}
+            offers={offers}/>
         </Route>
         <Route exact path="/login" component = {SignInPage}/>
         <Route exact path="/favorites" component = {FavoritesPage}/>
@@ -37,6 +40,22 @@ const App = (props) => {
 
 App.propTypes = {
   placesCount: PropTypes.number.isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    mark: PropTypes.bool,
+    photos: PropTypes.string.isRequired,
+    name: PropTypes. string.isRequired,
+    raiting: PropTypes.number,
+    featureEntire: PropTypes.string.isRequired,
+    featureBadrooms: PropTypes.number.isRequired,
+    featureAdults: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    priceText: PropTypes.string.isRequired,
+    propertyInside: PropTypes.array.isRequired,
+    hostUserImg: PropTypes.string,
+    hostUserName: PropTypes.string.isRequired,
+    propertyDescription: PropTypes.string
+  })).isRequired
 };
 
 export default App;
