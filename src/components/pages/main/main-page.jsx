@@ -9,6 +9,7 @@ class MainPage extends PureComponent {
   }
 
   render() {
+    const {offers, placesCount} = this.props;
     return (
       <div className="page page--gray page--main">
         <header className="header">
@@ -74,7 +75,7 @@ class MainPage extends PureComponent {
           </div>
           <div className="cities">
             <div className="cities__places-container container">
-              <PlacesList/>
+              <PlacesList offers={offers} placesCount={placesCount}/>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
               </div>

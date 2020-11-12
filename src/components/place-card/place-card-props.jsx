@@ -1,23 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
-import PlaceCard from "../place-card/place-card";
 
-const OffersList = (props) => {
-  const {offers} = props;
-
-  return (
-    <div className="cities__places-list places__list tabs__content">
-      {offers.map((offer) =>
-        <PlaceCard
-          key={offer.id}
-          offer={offer}
-        />)}
-    </div>
-  );
-};
-
-OffersList.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
+export default PropTypes.shape({
+  offer: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     mark: PropTypes.bool,
     photos: PropTypes.string.isRequired,
@@ -33,6 +17,4 @@ OffersList.propTypes = {
     hostUserName: PropTypes.string.isRequired,
     propertyDescription: PropTypes.string
   })).isRequired
-};
-
-export default OffersList;
+});
