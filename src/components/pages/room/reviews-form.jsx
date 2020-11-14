@@ -5,27 +5,28 @@ class ReviewsForm extends PureComponent {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    
+
     this.state = {
       review: ``,
       rating: 0
     };
   }
-  
+
   handleSubmit(evt) {
-      evt.preventDefault();
-      alert(`Форма не потеряется`);
-    };
+    evt.preventDefault();
+  }
+
   handleChange(evt) {
     const {name, value} = evt.target;
     this.setState({[name]: value});
   }
+
   render() {
     return (
       <form className="reviews__form form" onSubmit={this.handleSubmit} action="#" method="post">
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
-          <input className="form__rating-input visually-hidden" name="rating" value="5" id="5-stars" type="radio" 
+          <input className="form__rating-input visually-hidden" name="rating" value="5" id="5-stars" type="radio"
             onChange={this.handleChange}/>
           <label htmlFor="5-stars" className="reviews__rating-label form__rating-label" title="perfect">
             <svg className="form__star-image" width="37" height="33">
