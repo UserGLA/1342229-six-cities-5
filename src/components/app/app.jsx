@@ -8,17 +8,22 @@ import SignInPage from "../pages/sign-in/sign-in-page";
 import RoomPage from "../pages/room/room-page";
 
 const App = (props) => {
-  const {placesCount} = props;
-
+  const {placesCount, offers, reviews} = props;
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainPage placesCount={placesCount} />
+          <MainPage
+            placesCount={placesCount}
+            offers={offers}/>
         </Route>
         <Route exact path="/login" component = {SignInPage}/>
         <Route exact path="/favorites" component = {FavoritesPage}/>
-        <Route exact path="/offer/:id" component = {RoomPage}/>
+        <Route exact path="/offer/:id">
+          <RoomPage
+            offers={offers}
+            reviews={reviews}/>
+        </Route>
         <Route
           render={() => (
             <Fragment>
@@ -38,6 +43,30 @@ const App = (props) => {
 
 App.propTypes = {
   placesCount: PropTypes.number.isRequired,
+  reviews: PropTypes.arrayOf(PropTypes.shape({
+    reviewsAmount: PropTypes.number.isRequired,
+    reviewsUserAvatar: PropTypes.string.isRequired,
+    reviewsUserName: PropTypes.string.isRequired,
+    reviewsRating: PropTypes.number.isRequired,
+    reviewsText: PropTypes.string.isRequired,
+    reviewsTime: PropTypes.string.isRequired,
+  })).isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    mark: PropTypes.bool,
+    photos: PropTypes.string.isRequired,
+    name: PropTypes. string.isRequired,
+    raiting: PropTypes.number,
+    featureEntire: PropTypes.string.isRequired,
+    featureBadrooms: PropTypes.number.isRequired,
+    featureAdults: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    priceText: PropTypes.string.isRequired,
+    propertyInside: PropTypes.array.isRequired,
+    hostUserImg: PropTypes.string,
+    hostUserName: PropTypes.string.isRequired,
+    propertyDescription: PropTypes.string
+  })).isRequired
 };
 
 export default App;
