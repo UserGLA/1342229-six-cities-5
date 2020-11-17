@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import Map from "../../map/map";
 
 import PlacesList from "../../places-list/places-list";
 
@@ -77,7 +78,9 @@ class MainPage extends PureComponent {
             <div className="cities__places-container container">
               <PlacesList offers={offers} placesCount={placesCount}/>
               <div className="cities__right-section">
-                <section className="cities__map map"></section>
+                <section className="cities__map map">
+                  <Map />
+                </section>
               </div>
             </div>
           </div>

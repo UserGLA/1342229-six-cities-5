@@ -14,6 +14,7 @@ export default [
     hostUserImg: `"img/avatar-angelina.jpg"`,
     hostUserName: `Angelina`,
     propertyDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,Cras aliquet varius magna, non porta ligula feugiat eget.,Fusce tristique felis at fermentum pharetra.,Aliquam id orci ut lectus varius     viverra.,Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante.,Phasellus eros mauris, condimentum sed nibh vitae, sodales efficitur ipsum.`,
+    coordinates: [52.3909553943508, 4.85309666406198]
   },
 
   {
@@ -31,6 +32,8 @@ export default [
     hostUserImg: `"img/avatar-angelina.jpg"`,
     hostUserName: `Bob`,
     propertyDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,Cras aliquet varius magna, non porta ligula feugiat eget.,Fusce tristique felis at fermentum pharetra.,Aliquam id orci ut lectus varius     viverra.,Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante.,Phasellus eros mauris, condimentum sed nibh vitae, sodales efficitur ipsum.`,
+    coordinates: [52.369553943508, 4.85309666406198]
+
   },
 
   {
@@ -48,6 +51,7 @@ export default [
     hostUserImg: `"img/avatar-angelina.jpg"`,
     hostUserName: `Max`,
     propertyDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,Cras aliquet varius magna, non porta ligula feugiat eget.,Fusce tristique felis at fermentum pharetra.,Aliquam id orci ut lectus varius     viverra.,Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante.,Phasellus eros mauris, condimentum sed nibh vitae, sodales efficitur ipsum.`,
+    coordinates: [52.3909553943508, 4.929309666406198]
   },
 
   {
@@ -65,5 +69,6 @@ export default [
     hostUserImg: `"img/avatar-angelina.jpg"`,
     hostUserName: `Oliver`,
     propertyDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,Cras aliquet varius magna, non porta ligula feugiat eget.,Fusce tristique felis at fermentum pharetra.,Aliquam id orci ut lectus varius     viverra.,Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante.,Phasellus eros mauris, condimentum sed nibh vitae, sodales efficitur ipsum.`,
+    coordinates: [52.3809553943508, 4.939309666406198]
   }
 ];
